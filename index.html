@@ -1,1 +1,36 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><link href="css/impress-demo.css" rel="stylesheet"/><title>React App</title><link href="/static/css/main.bd1f9ba6.css" rel="stylesheet"></head><body class="impress-not-supported"><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script src="js/impress.js"></script><script>impress().init()</script><script type="text/javascript" src="/static/js/main.ce394e77.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Verify both GET and Function calling from Mobile Application</p>
+
+<p id="get"><font size="36px">appID from Device via QUERY STRING = ? </font></p>
+<p id="fun"><font size = "36px">appID from Device via FUNCTION = ?</font></p>
+
+<script>
+
+var url = window.location.href;
+if(url.includes("?") && (url.split('?'))[1].startsWith("appid"))
+{
+	var getParam = url.split('?');
+	var appid = getParam[1].split('=');
+	document.getElementById("get").innerHTML = "appID from Device via QUERY STRING = "+appid[1];
+	document.getElementById("get").style.fontSize = "72px";
+}
+
+
+//getAppID("Vijay V R");
+
+
+function  getAppID(appid)
+{
+	document.getElementById("fun").innerHTML = "appID from Device via FUNCTION = "+appid;
+	document.getElementById("fun").style.fontSize = "72px";
+
+}
+
+
+</script>
+
+</body>
+</html>
